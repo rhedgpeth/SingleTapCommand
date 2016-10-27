@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SingleTapCommand.HomePage">
+	<ContentPage.Content>
+
+		<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+			<Label Text="LABEL (generic Forms) Command (NOT Single-Tap)" Margin="0,10,0, 0">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding NotSingleTapLimitingCommand}" />
+				</Label.GestureRecognizers>
+			</Label>
+			<Button Text="BUTTON (generic Forms) Command (NOT Single-Tap)" Command="{Binding NotSingleTapLimitingCommand}" /> 
+
+			<Label Text="LABEL SingleTapCommand 1(Single-Tap Good)" Margin="0,10,0, 0">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding SingleTapLimitingCommand1}" />
+				</Label.GestureRecognizers>
+			</Label>
+			<Button Text="BUTTON SingleTapCommand 1 (Single-tap for TapGestures = Good, Buttons = Bad)" Command="{Binding SingleTapLimitingCommand1}" /> 
+
+			<Label Text="LABEL SingleTapCommand 2 (Single-Tap)" Margin="0,10,0, 0">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding SingleTapLimitingCommand2}" />
+				</Label.GestureRecognizers>
+			</Label>
+			<Button Text="BUTTON SingleTapCommand 2 (NOT Single-tap)" Command="{Binding SingleTapLimitingCommand2}" /> 
+
+			<Label Text="LABEL SingleTapCommand 3 (Single-Tap)" Margin="0,10,0, 0">
+				<Label.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding SingleTapLimitingCommand3}" />
+				</Label.GestureRecognizers>
+			</Label>
+			<Button Text="BUTTON SingleTapCommand 3 (Single-tap)" Command="{Binding SingleTapLimitingCommand3}" /> 
+
+		</StackLayout>
+		
+	</ContentPage.Content>
+</ContentPage>
